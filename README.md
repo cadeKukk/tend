@@ -2,6 +2,8 @@
 
 A playful SwiftUI iOS app that encourages small daily habits for mental health. Finishing things on your daily list feeds a customizable companion creature that hops, reacts, levels up, and evolves over time.
 
+Built live with Claude Code from a single prompt in my video on building iOS apps with AI agents. More at [cadekukk.com](https://cadekukk.com).
+
 ## Features
 
 - **Daily checklist** with guided flows for feelings check-ins, one-minute breathing, and three good things
@@ -15,13 +17,34 @@ All data is stored locally on device in a JSON file. No account or network.
 
 ## Getting started
 
-Requires Xcode 16 or later; targets iOS 17+.
+You need a Mac with Xcode 16 or later. The app targets iOS 17+.
 
-```sh
-open Tend.xcodeproj
-```
+1. Download the code: click **Code → Download ZIP** above and unzip it, or run
 
-Pick an iPhone simulator and press ⌘R. To run on a device, set your team under **Signing & Capabilities**.
+   ```sh
+   git clone https://github.com/cadeKukk/tend.git
+   ```
+
+2. Open the project:
+
+   ```sh
+   cd tend
+   open Tend.xcodeproj
+   ```
+
+3. Pick an iPhone simulator from the device menu at the top of Xcode and press ⌘R.
+
+### Run it on your own iPhone
+
+A free Apple ID is enough. No paid developer account is needed.
+
+1. In Xcode, select the **Tend** project, then the **Tend** target, then **Signing & Capabilities**.
+2. Under **Team**, choose your Apple ID. Add it first under **Xcode → Settings → Accounts** if it isn't listed.
+3. Change **Bundle Identifier** from `com.cadekukk.tend` to something unique to you, like `com.yourname.tend`. Xcode won't sign an identifier that's already registered to someone else.
+4. Plug in your iPhone, select it as the run destination, and press ⌘R.
+5. The first time, turn on **Settings → Privacy & Security → Developer Mode** on the iPhone, and trust your developer profile under **Settings → General → VPN & Device Management**.
+
+Apps signed with a free Apple ID stop opening after 7 days. Press ⌘R again to reinstall it.
 
 The Xcode project is generated from `project.yml` with [XcodeGen](https://github.com/yonaskolb/XcodeGen). After adding or removing files, regenerate it:
 
@@ -53,3 +76,7 @@ Debug builds accept these in **Edit Scheme → Run → Arguments** for quickly r
 | `-levelup 12` | Show the level-up celebration |
 | `-autotap 3` | Complete the habit at that index on launch |
 | `-lookback timeline` | Open Look back in timeline mode (or pass days ago) |
+
+## License
+
+MIT. See [LICENSE](LICENSE).
