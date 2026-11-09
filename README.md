@@ -4,6 +4,16 @@ A playful SwiftUI iOS app that encourages small daily habits for mental health. 
 
 Built live with Claude Code from a single prompt in my video on building iOS apps with AI agents. More at [cadekukk.com](https://cadekukk.com).
 
+<p align="center">
+  <img src="docs/screenshots/reward.gif" width="420" alt="Pip the companion on the Today screen: a habit is completed, hearts burst around it, it says Nice one and the XP bar fills.">
+</p>
+
+| Today | Look back | Wardrobe | Journey |
+| --- | --- | --- | --- |
+| <img src="docs/screenshots/today.png" width="200" alt="Today screen: Pip asleep in a beanie, level and XP bar, the weekly goal and the daily checklist."> | <img src="docs/screenshots/lookback.png" width="200" alt="Look back screen: a month calendar with a mood face on each day that had a check-in."> | <img src="docs/screenshots/wardrobe.png" width="200" alt="Wardrobe screen: Pip with a grid of body colors, one still locked."> | <img src="docs/screenshots/journey.png" width="200" alt="Journey screen: streak, total XP and weekly goal counts above the evolution path."> |
+
+These are the real app in the iOS Simulator (iPhone 17 Pro, iOS 26.5), filled with the made-up history the Debug build generates. To get the same screens, see [Debug launch arguments](#debug-launch-arguments).
+
 ## Features
 
 - **Daily checklist** with guided flows for feelings check-ins, one-minute breathing, and three good things
@@ -70,12 +80,14 @@ Debug builds accept these in **Edit Scheme → Run → Arguments** for quickly r
 | Argument | Effect |
 | --- | --- |
 | `-reset` | Start fresh from the egg |
-| `-demo 9` | Seed history up to level 9 |
+| `-demo 9` | Replace all data with random history at about level 9 (weekly bonuses can add a level) |
 | `-look rose,sparkle,belly,beanie` | With `-demo`: body, eyes, pattern, accessory |
 | `-tab 2` | Open a specific tab (0–3) |
 | `-levelup 12` | Show the level-up celebration |
 | `-autotap 3` | Complete the habit at that index on launch |
 | `-lookback timeline` | Open Look back in timeline mode (or pass days ago) |
+
+`-demo` makes new random data on every launch that includes it, so launch once with `-demo 9 -look rose,sparkle,belly,beanie`, then relaunch with only `-tab` to see the same data on each screen.
 
 ## License
 
